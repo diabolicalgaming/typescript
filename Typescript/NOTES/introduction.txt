@@ -1,0 +1,19 @@
+What is TypeScript?
+
+  o A JavaScript superset.
+  o A language building up on JavaScript.
+  o Adds now features and advantages to JavaScript.
+  o A language building up on JavaScript.
+
+  It is also a compiler that you run over your code to compile TypeScript code
+  to JavaScript. TypeScript adds Types to allow me to identify errors quicker before
+  my script runs and the error occurs at runtime in the browser.
+
+TypeScript adds:
+
+  o Types
+  o Next-gen JavaScript features (compiled down for older Browsers)
+  o Non-JavaScript features like Interfaces or Generics
+  o Meta-Programming features like Decorators
+  o Rich configurable options - e.g. ability to configure the compiler
+  o Modern tooling that helps even in non-TypeScript projects.
