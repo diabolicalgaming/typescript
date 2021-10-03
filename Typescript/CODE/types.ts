@@ -39,3 +39,55 @@ console.log(multiply_n(4, 6))
 /*
     TypeScript knows a lot more types than JS.
 */
+
+// null object
+var nothing: null = null
+
+console.log(nothing)
+
+/*
+    Undefined denotes a value given to an unitialized variable.
+*/
+var e: undefined = undefined;
+
+/*
+    If a variable is declared with the "any" data-type then any type of value can be
+    assigned to that variable.
+*/
+
+var anything: any = "Can literally be anything!"
+
+/*
+    Void in typescript. Only null or undefined are assignable to void.
+*/
+function helloWorld(): void {
+    console.log("Hello World!")
+}
+
+var nada: void = undefined
+var none: void = null
+
+var something: any = "Word"
+
+// TYPE ASSIGNMENTS
+
+// It is bad practice to inialize a varibale like below.
+var num: number = 25
+
+//This is unconventional but better
+var num: number
+num=2
+
+// I should initialize a variable like this. TypeScript will take note on its Type.
+var number1 = 0
+number1 = 1
+
+/*
+    CORE TYPES:
+        o number
+        o string
+        o boolean
+        o object
+        o array
+        o tuple
+*/
