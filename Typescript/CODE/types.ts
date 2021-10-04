@@ -53,9 +53,14 @@ var e: undefined = undefined;
 /*
     If a variable is declared with the "any" data-type then any type of value can be
     assigned to that variable.
+
+    I should avoid using "any". I should explicitly set the type of a variable
 */
 
 var anything: any = "Can literally be anything!"
+
+// I can define an array using any
+var all: any = [1, "2", 3, [4,5,6]]
 
 /*
     Void in typescript. Only null or undefined are assignable to void.
