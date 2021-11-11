@@ -1,0 +1,23 @@
+*/
+    Initialize the project. tsconfig.json file created when I ran the
+    "tsc --init" command.
+
+    This is the indicator that the project that this file exists in and all sub folders,
+    should be managed by TypeScript. It tells TypeScript how it should compile these files.
+*/
+
+tsc --init
+
+
+/*
+    Running "tsc" alone will compile all the TypeScript files in my project.
+*/
+tsc
+
+/*
+    "tsc --watch" will enter watch mode for all TypeScript files. Now whenever
+    I change a file and save it, it will automatically re-compile that file that changed
+    and reflect the changes in the JavaScript file.
+*/
+
+tsc --watch 
