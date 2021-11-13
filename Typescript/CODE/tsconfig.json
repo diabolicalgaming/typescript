@@ -1,7 +1,8 @@
 {
   /*
     The compilerOptions keys allows me to control how my TypeScript code is compiled. It controls
-    how the files that are compiled are treated by TypeScript.
+    how the files that are compiled are treated by TypeScript. Most of these options will not matter
+    and I can ignore them.
   */
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
@@ -16,7 +17,7 @@
 
     /* Language and Environment */
     "target": "es5",                                     /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    // "lib": [],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */
+    // "lib": [],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. If not set the defaults depend on my 'target'.*/
     // "jsx": "preserve",                                /* Specify what JSX code is generated. */
     // "experimentalDecorators": true,                   /* Enable experimental support for TC39 stage 2 draft decorators. */
     // "emitDecoratorMetadata": true,                    /* Emit design-type metadata for decorated declarations in source files. */
@@ -29,7 +30,7 @@
 
     /* Modules */
     "module": "commonjs",                                /* Specify what module code is generated. */
-    // "rootDir": "./",                                  /* Specify the root folder within your source files. */
+    // "rootDir": "./",                                  /* Specify the root folder within your source files. I can set this to make sure the TS cxompiler does not look in our folders. It makes sure the project structure I set up is kept.*/
     // "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
     // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
     // "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
@@ -46,17 +47,17 @@
     // "maxNodeModuleJsDepth": 1,                        /* Specify the maximum folder depth used for checking JavaScript files from `node_modules`. Only applicable with `allowJs`. */
 
     /* Emit */
-    // "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
-    // "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
+    // "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. .d.ts files are used to export my code as a library for others. */
+    // "declarationMap": true,                           /* Create sourcemaps for d.ts files. If set, will generate .js.map files and allow me to see TS files and not just JS files in Sources tab on web console.*/
     // "emitDeclarationOnly": true,                      /* Only output d.ts files and not JavaScript files. */
     // "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
     // "outFile": "./",                                  /* Specify a file that bundles all outputs into one JavaScript file. If `declaration` is true, also designates a file that bundles all .d.ts output. */
-    // "outDir": "./",                                   /* Specify an output folder for all emitted files. */
-    // "removeComments": true,                           /* Disable emitting comments. */
-    // "noEmit": true,                                   /* Disable emitting files from a compilation. */
+    // "outDir": "./",                                   /* Specify an output folder for all emitted files. Tells the compiler where created files should be stored. E.g. if I set it to ./<folder> the JS files created will be stored in <folder>. If I have <example>/file.ts, the generated file will be in <folder>/<example>/file.ts.*/
+    // "removeComments": true,                           /* Disable emitting comments. If set, the compile JS files will not have any comments.*/
+    // "noEmit": true,                                   /* Disable emitting files from a compilation. If set, no JS files will be generated.*/
     // "importHelpers": true,                            /* Allow importing helper functions from tslib once per project, instead of including them per-file. */
     // "importsNotUsedAsValues": "remove",               /* Specify emit/checking behavior for imports that are only used for types */
-    // "downlevelIteration": true,                       /* Emit more compliant, but verbose and less performant JavaScript for iteration. */
+    // "downlevelIteration": true,                       /* Emit more compliant, but verbose and less performant JavaScript for iteration. If set, gives a more exact compilation. Will output more verbose code. Only turn on if I have loops and if my generated code behaves differently than it should regarding the loops.*/
     // "sourceRoot": "",                                 /* Specify the root path for debuggers to find the reference source code. */
     // "mapRoot": "",                                    /* Specify the location where debugger should locate map files instead of generated locations. */
     // "inlineSourceMap": true,                          /* Include sourcemap files inside the emitted JavaScript. */
@@ -65,7 +66,7 @@
     // "newLine": "crlf",                                /* Set the newline character for emitting files. */
     // "stripInternal": true,                            /* Disable emitting declarations that have `@internal` in their JSDoc comments. */
     // "noEmitHelpers": true,                            /* Disable generating custom helper functions like `__extends` in compiled output. */
-    // "noEmitOnError": true,                            /* Disable emitting files if any type checking errors are reported. */
+    // "noEmitOnError": true,                            /* Disable emitting files if any type checking errors are reported. If set to true problematic files will not be generated. If any file fails to compile no files will be emitted. I have to fix the error for TS to compile the files for me. */
     // "preserveConstEnums": true,                       /* Disable erasing `const enum` declarations in generated code. */
     // "declarationDir": "./",                           /* Specify the output directory for generated declaration files. */
 
@@ -77,17 +78,18 @@
     "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
 
     /* Type Checking */
-    "strict": true,                                      /* Enable all strict type-checking options. */
-    // "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied `any` type.. */
-    // "strictNullChecks": true,                         /* When type checking, take into account `null` and `undefined`. */
+    "strict": true,                                      /* Enable all strict type-checking options. Automatically sets everything from noImplicitANy to alwaysStrict. I can set this option or set all of them individually. */
+    // "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied `any` type. If sset it ensures that I have to clear about my parameters and about the values I am working with in my code. I need to make the data type of the variable clear. */
+    // "strictNullChecks": true,                         /* When type checking, take into account `null` and `undefined`. If set, tells TypeScript to be strict regarding how I access and work the values that may hold a null value. */
     // "strictFunctionTypes": true,                      /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
-    // "strictBindCallApply": true,                      /* Check that the arguments for `bind`, `call`, and `apply` methods match the original function. */
+    // "strictBindCallApply": true,                      /* Check that the arguments for `bind`, `call`, and `apply` methods match the original function. If set ensures I don't use bind, call, or apply in a way that does not work with my code. */
     // "strictPropertyInitialization": true,             /* Check for class properties that are declared but not set in the constructor. */
     // "noImplicitThis": true,                           /* Enable error reporting when `this` is given the type `any`. */
     // "useUnknownInCatchVariables": true,               /* Type catch clause variables as 'unknown' instead of 'any'. */
-    // "alwaysStrict": true,                             /* Ensure 'use strict' is always emitted. */
+    // "alwaysStrict": true,                             /* Ensure 'use strict' is always emitted. If set controls that the JS files that are generated are using strict mode. */
     // "noUnusedLocals": true,                           /* Enable error reporting when a local variables aren't read. */
     // "noUnusedParameters": true,                       /* Raise an error when a function parameter isn't read */
+    // "noImplicitReturns": true,                        /* If I turn on everything between noUnusedLocals and noImplicitReturns it will throw an error in TypeScript for unused variables and parameters. Unused global variables are allowed though. Will also throw an error for a function which only returns something sometimes (noImplicitReturns). */
     // "exactOptionalPropertyTypes": true,               /* Interpret optional property types as written, rather than adding 'undefined'. */
     // "noImplicitReturns": true,                        /* Enable error reporting for codepaths that do not explicitly return in a function. */
     // "noFallthroughCasesInSwitch": true,               /* Enable error reporting for fallthrough cases in switch statements. */

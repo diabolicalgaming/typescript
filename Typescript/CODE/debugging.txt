@@ -1,0 +1,7 @@
+ESLint - library to improve code quality for advanced projects.
+
+Debugger for Chrome - library to debug my TypeScript files from VS code, through chrome without using the chrome dev tools. 
+I need to enable sourceMap in tscongigjson file and place a break point, then Run -> Start Debugging and select the Chrome environment.
+From 3:12:00 of video.
+
+Prettier - library to automatically format my code.
